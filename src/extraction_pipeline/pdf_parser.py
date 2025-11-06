@@ -4,14 +4,14 @@ from typing import List, Tuple, Any
 
 class PdfParser:
     """
-    Encapsulates PDF text extraction, hashing, and layout parsing.
+    [AÇÃO 17] Parser (get_text("words"))
     """
 
     def __init__(self, pdf_path: str):
         self.pdf_path = pdf_path
         self._text_cache = None
         self._hash_cache = None
-        self._blocks_cache = None
+        self._words_cache = None 
 
     def get_file_hash(self) -> str:
         """Calculates the SHA256 hash of the PDF file content."""
@@ -39,29 +39,27 @@ class PdfParser:
                     return ""
                 
                 page = doc[0] 
-                self._text_cache = page.get_text("text")
+                self._text_cache = page.get_text("text", sort=True) 
                 return self._text_cache
         except Exception as e:
             print(f"Error reading PDF {self.pdf_path}: {e}")
             return ""
 
-    def extract_text_blocks(self) -> List[Tuple[float, float, float, float, str]]:
+    def extract_words(self) -> List[Tuple[float, float, float, float, str, int, int, int]]:
         """
-        Extracts all text blocks with their coordinates (x0, y0, x1, y1, "text").
+        [AÇÃO 17] Extrai todas as PALAVRAS com suas coordenadas.
         """
-        if self._blocks_cache:
-            return self._blocks_cache
+        if self._words_cache:
+            return self._words_cache
 
-        blocks = []
         try:
             with fitz.open(self.pdf_path) as doc:
                 if len(doc) == 0:
                     return []
                 
                 page = doc[0]
-
-                self._blocks_cache = page.get_text("blocks")
-                return self._blocks_cache
+                self._words_cache = page.get_text("words", sort=True) 
+                return self._words_cache
         except Exception as e:
-            print(f"Error extracting text blocks from {self.pdf_path}: {e}")
+            print(f"Error extracting text words from {self.pdf_path}: {e}")
             return []
