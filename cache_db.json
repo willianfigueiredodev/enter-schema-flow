@@ -1,1 +1,74 @@
-{}
+{
+  "hash_cache": {
+    "77d44e01232f46da587d4e2215095cc2ef4312c57ada85158684b7ec14c5eeec": {
+      "inscricao": "101943",
+      "nome": "JOANA D'ARC",
+      "seccional": "PR",
+      "subsecao": null,
+      "categoria": "SUPLEMENTAR",
+      "endereco_profissional": "AVENIDA PAULISTA, Nº 2300 andar Pilotis, Bela Vista, SÃO PAULO - SP, 01310300",
+      "telefone_profissional": null,
+      "situacao": "SITUAÇÃO REGULAR"
+    },
+    "38f467697480aa4dbe8d45f66b8d9e2c785e1b5dabe504131e90571cb94575e2": {
+      "inscricao": "101943",
+      "seccional": "PR",
+      "categoria": "SUPLEMENTAR",
+      "situacao": "SITUAÇÃO REGULAR",
+      "nome": "LUIS FILIPE ARAUJO AMARAL",
+      "subsecao": null,
+      "endereco_profissional": "AVENIDA PAULISTA, Nº 2300 andar Pilotis, Bela Vista, SÃO PAULO - SP, 01310300"
+    },
+    "57193cbde011969d7941772f2c05d11c9f2bc3e1fdd519164f021663a1d89cbf": {
+      "inscricao": "101943",
+      "seccional": "PR",
+      "categoria": "SUPLEMENTAR",
+      "situacao": "SITUAÇÃO REGULAR",
+      "nome": "SON GOKU",
+      "subsecao": "CONSELHO SECCIONAL - PARANÁ",
+      "telefone_profissional": null
+    },
+    "119c696bcab256dbc02774949c6cc2a9486c8c5e3192fa245db2aa7196bb1d37": {
+      "data_base": "05/09/2025",
+      "data_verncimento": "12/10/2025",
+      "quantidade_parcelas": null,
+      "produto": null,
+      "sistema": "CONSIGNADO",
+      "tipo_de_operacao": "Vencidas",
+      "tipo_de_sistema": null
+    },
+    "f790402c01b4aab7087063a18e7fa054264fda304d7e3d222b098d77f4ce11d1": {
+      "sistema": "CONSIGNADO",
+      "pesquisa_por": "CLIENTE",
+      "pesquisa_tipo": "CPF",
+      "valor_parcela": "2.372,64",
+      "cidade": "Mozarlândia"
+    },
+    "340eb6145d6cbd2d2e3873f1b15da9bc097759b0eb0662c38b6eac03b04d6ee3": {
+      "data_referencia": "04/02/2021",
+      "selecao_de_parcelas": null,
+      "total_de_parcelas": 96
+    }
+  },
+  "template_cache": {
+    "carteira_oab": {
+      "nome": "SON GOKU",
+      "seccional": "PR",
+      "categoria": "SUPLEMENTAR",
+      "endereco_profissional": "AVENIDA PAULISTA, Nº 2300 andar Pilotis, Bela Vista, SÃO PAULO - SP, 01310300",
+      "situacao": "SITUAÇÃO REGULAR",
+      "subsecao": "CONSELHO SECCIONAL - PARANÁ"
+    },
+    "tela_sistema": {
+      "data_base": "05/09/2025",
+      "data_verncimento": "12/10/2025",
+      "sistema": "CONSIGNADO",
+      "tipo_de_operacao": "Vencidas",
+      "pesquisa_por": "CLIENTE",
+      "pesquisa_tipo": "CPF",
+      "valor_parcela": "2.372,64",
+      "cidade": "Mozarlândia",
+      "data_referencia": "04/02/2021"
+    }
+  }
+}
