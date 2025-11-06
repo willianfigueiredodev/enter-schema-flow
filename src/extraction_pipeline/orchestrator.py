@@ -14,9 +14,7 @@ class Orchestrator:
                  heuristic_extractor: HeuristicExtractor, 
                  cache_extractor: CacheExtractor, 
                  llm_extractor: LlmExtractor):
-        """
-        Initializes the orchestrator with the extraction strategies (DI).
-        """
+        
         self.heuristic_extractor = heuristic_extractor
         self.cache_extractor = cache_extractor
         self.llm_extractor = llm_extractor
@@ -39,6 +37,8 @@ class Orchestrator:
             return cached_result
 
         pdf_text = parser.extract_text()
+        pdf_blocks = parser.extract_text_blocks()
+        
         if not pdf_text:
             print("[Orchestrator] Failed to extract text. Aborting.")
             return {field: None for field in original_schema}
@@ -47,7 +47,7 @@ class Orchestrator:
         remaining_schema = original_schema.copy()
 
         stage_1_results, stage_2_schema = self.heuristic_extractor.extract(
-            pdf_text,
+            pdf_blocks,
             remaining_schema
         )
         final_results.update(stage_1_results)
