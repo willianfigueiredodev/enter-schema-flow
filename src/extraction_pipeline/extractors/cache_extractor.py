@@ -5,9 +5,6 @@ from typing import Dict, Any, Tuple
 class CacheExtractor:
     """
     Implements Stage 0 (Hash Cache) and Stage 2 (Template Cache).
-    
-    It learns from successful LLM extractions to provide fast, cheap
-    responses for repeated files or labels.
     """
     CACHE_FILE = "cache_db.json"
 
@@ -44,7 +41,7 @@ class CacheExtractor:
         Checks if an exact result for this file hash already exists.
         """
         return self.hash_cache.get(pdf_hash)
-    
+
     def save_hash_cache(self, pdf_hash: str, result: Dict[str, Any]):
         """
         Saves a definitive result for a specific file hash.
@@ -91,12 +88,9 @@ class CacheExtractor:
         for field, description in schema_to_find.items():
             if field in label_rules:
                 saved_value = label_rules[field]
-                
-                # Simple string matching for now
                 if isinstance(saved_value, str) and re.search(re.escape(saved_value), pdf_text):
                     print(f"    - [CACHE-TPL] Field '{field}': FOUND ('{saved_value}')")
                     found_results[field] = saved_value
-                # Simple list matching (handles "array of objects")
                 elif isinstance(saved_value, list):
                      print(f"    - [CACHE-TPL] Field '{field}': FOUND (from list cache)")
                      found_results[field] = saved_value
