@@ -1,4 +1,4 @@
-# 🚀 ENTER AI FELLOWSHIP - SOLUÇÃO DE EXTRAÇÃO DE DADOS HÍBRIDA
+# SOLUÇÃO DE EXTRAÇÃO DE DADOS HÍBRIDA
 
 ## 1. Mapeamento de Desafios e Solução Proposta
 
